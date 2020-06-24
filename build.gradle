@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext{
+    cucumberVersion = '6.1.1' // '5.0.0-RC2'
+    junitVersion = '4.12'
+    seleniumVersion = '3.141.59'
+}
+
+dependencies {
+    testImplementation group: 'junit', name: 'junit', version: "$junitVersion"
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: "$cucumberVersion"
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: "$cucumberVersion"
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: "$seleniumVersion"
+}
+
+wrapper {
+    gradleVersion = '6.5'
+}
